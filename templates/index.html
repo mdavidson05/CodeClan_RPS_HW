@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{# this is how we comment in djinja #}
+
+{% block content%}
+
+<head>
+    <title>{{ title }} - My To-Do List</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors!</h1>
+
+      <!-- <p>
+        {{gamers}}: {{gamers}}
+      </p> -->
+      <p2></p2>
+
+    <form action="/game" method="post"> 
+      <label for="title">Enter Player 1 Choice:</label>
+      <input type="text" name="title" id="title">
+      <label for="p2">Enter Player 2 Choice:</label>
+      <input type="text" name="p2" id="p2">
+      <!-- <textarea name="description" rows="2" cols="30"></textarea> -->
+      <input type="submit" value="Play Game">
+    </form>  
+
+    <!-- {% for player in gamers%}  
+    <!-- division bracket is python "code" and double curly bracket is item from python -->
+      <!-- <div>
+          <p>
+            {{ player.player }}: <b>{{ player.move }}
+             
+            </b> --> 
+
+            <!-- {% if game %}
+              <span>&#x2603</span>
+            {% endif %} -->
+          <!-- </p>
+      </div> -->
+  
+    <!-- {% endfor %} -->
+    {%endblock %}
