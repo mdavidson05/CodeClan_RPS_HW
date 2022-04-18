@@ -3,9 +3,9 @@ from models.game_list import *
 from models.player_list import *
 from flask import render_template, request, redirect
 
-@app.route('/')
+@app.route('/play', methods = ['GET'])
 def index():
-    return render_template('index.html', title ="Home", gamers = game_list, player_list=players) 
+    return render_template('index.html', title ="Home", gamers = game_list, results = result) 
 
 @app.route('/game', methods = ['POST'])
 def game():
@@ -22,8 +22,8 @@ def game():
     add_to_game_list(game)
     determine_winner(game)
 
-    return render_template('index.html', title ="Results", gamers = game_list, results=result)
+    return render_template('index.html', title ="Results", gamers = game_list, results = result) 
 
-@app.route('/welcome', methods = ['GET'])
+@app.route('/')
 def results():
-    return render_template('welcome.html', title = "welcome")
+    return render_template('welcome.html', title = "Welcome!", gamers = game_list, results = result)
